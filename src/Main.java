@@ -11,8 +11,8 @@ import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        SimpleGui3 gui = new SimpleGui3();
-        gui.PaintFrame();
+//        SimpleGui3 gui = new SimpleGui3();
+//        gui.PaintFrame();
     }
 }
 
