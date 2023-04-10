@@ -13,7 +13,7 @@ public class Configurations {
         GamePieces.add( new Knight( "knight_black.png",0,1,'k','b'));
         GamePieces.add( new Bishop( "bishop_black.png",0,2,'b','b'));
         GamePieces.add( new Queen( "queen_black.png",0,3,'q','b'));
-        GamePieces.add( new Piece( "king_black.png",0,4,'k','b'));
+        GamePieces.add( new King( "king_black.png",0,4,'k','b'));
         GamePieces.add( new Bishop( "bishop_black.png",0,5,'b','b'));
         GamePieces.add( new Knight( "knight_black.png",0,6,'k','b'));
         GamePieces.add( new Rook( "rook_black.png",0,7,'r','b'));
@@ -37,7 +37,7 @@ public class Configurations {
         GamePieces.add( new Knight( "knight_white.png",7,1,'k','w'));
         GamePieces.add( new Bishop( "bishop_white.png",7,2,'b','w'));
         GamePieces.add( new Queen( "queen_white.png",7,3,'q','w'));
-        GamePieces.add( new Piece( "king_white.png",7,4,'k','w'));
+        GamePieces.add( new King( "king_white.png",7,4,'k','w'));
         GamePieces.add( new Bishop( "bishop_white.png",7,5,'b','w'));
         GamePieces.add( new Knight( "knight_white.png",7,6,'k','w'));
         GamePieces.add( new Rook( "rook_white.png",7,7,'r','w'));

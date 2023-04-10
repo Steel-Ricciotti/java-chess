@@ -21,31 +21,80 @@ public class Pawn extends Piece {
         //collision
         if(this.getTeam()=='w'){
             if(this.hasMoved()){
-
-                int[] move = {this.getX()-1, this.getY()};
-                possibleMoves.add(move);
+                int possibleXMove = this.getX()-1;
+                int possibleYMove = this.getY();
+                if(!CheckForCollision(possibleXMove, possibleYMove)) {
+                    int[] firstMove = {possibleXMove, possibleYMove};
+                    possibleMoves.add(firstMove);
+                }
             }
             else{
-                int[] firstMove = {this.getX()-1, this.getY()};
-                possibleMoves.add(firstMove);
-                int[] secondMove = {this.getX()-2, this.getY()};
-                possibleMoves.add(secondMove);
+                int possibleXMove = this.getX()-1;
+                int possibleYMove = this.getY();
+                if(!CheckForCollision(possibleXMove, possibleYMove)){
+                    int[] firstMove = {possibleXMove, possibleYMove};
+                    possibleMoves.add(firstMove);
+
+                    possibleXMove = this.getX()-2;
+                    possibleYMove = this.getY();
+                    int[] secondMove = {possibleXMove, possibleYMove};
+                    possibleMoves.add(secondMove);
+                }
             }
         }
         else{
             if(this.hasMoved()){
-                int[] move = {this.getX()+1, this.getY()};
-                possibleMoves.add(move);
+                int possibleXMove = this.getX()+1;
+                int possibleYMove = this.getY();
+                if(!CheckForCollision(possibleXMove, possibleYMove)) {
+                    int[] firstMove = {possibleXMove, possibleYMove};
+                    possibleMoves.add(firstMove);
+                }
             }
             else{
-                int[] firstMove = {this.getX()+1, this.getY()};
-                possibleMoves.add(firstMove);
-                int[] secondMove = {this.getX()+2, this.getY()};
-                possibleMoves.add(secondMove);
+                int possibleXMove = this.getX()+1;
+                int possibleYMove = this.getY();
+                if(!CheckForCollision(possibleXMove, possibleYMove)){
+                    int[] firstMove = {possibleXMove, possibleYMove};
+                    possibleMoves.add(firstMove);
+
+                    possibleXMove = this.getX()+2;
+                    possibleYMove = this.getY();
+                    int[] secondMove = {possibleXMove, possibleYMove};
+                    possibleMoves.add(secondMove);
+                }
             }
         }
 
+        //Check Attack Moves:
+        if(this.getTeam()=='w'){
+                int possibleXMove = this.getX()-1;
+                int possibleYMove = this.getY()-1;
+                if(CheckForCollisionWithOpponent(possibleXMove, possibleYMove)) {
+                    int[] firstMove = {possibleXMove, possibleYMove};
+                    possibleMoves.add(firstMove);
+                }
+            possibleXMove = this.getX()-1;
+            possibleYMove = this.getY()+1;
+            if(CheckForCollisionWithOpponent(possibleXMove, possibleYMove)) {
+                int[] firstMove = {possibleXMove, possibleYMove};
+                possibleMoves.add(firstMove);
+            }
+        }
+        else{
+                int possibleXMove = this.getX()+1;
+                int possibleYMove = this.getY()+1;
+                if(CheckForCollisionWithOpponent(possibleXMove, possibleYMove)) {
+                    int[] firstMove = {possibleXMove, possibleYMove};
+                    possibleMoves.add(firstMove);
+                }
+            possibleXMove = this.getX()+1;
+            possibleYMove = this.getY()-1;
+            if(CheckForCollisionWithOpponent(possibleXMove, possibleYMove)) {
+                int[] firstMove = {possibleXMove, possibleYMove};
+                possibleMoves.add(firstMove);
+            }
+        }
         return possibleMoves;
     }
-
 }
